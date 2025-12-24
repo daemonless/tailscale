@@ -1,0 +1,12 @@
+#!/bin/sh
+# Initialize Tailscale
+
+# Create required directories
+mkdir -p /var/db/tailscale /var/run/tailscale
+chmod 700 /var/db/tailscale
+
+# Add loopback interface (required for proxy listeners)
+ifconfig lo0 127.0.0.1 up 2>/dev/null || true
+
+echo "Tailscale container initialized"
+echo "After start, run: podman exec tailscale tailscale up"

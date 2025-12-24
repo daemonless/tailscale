@@ -1,0 +1,11 @@
+#!/bin/sh
+# Tailscale daemon s6 service
+
+# Wait for network to be available
+sleep 2
+
+# Signal readiness when tailscaled is responsive
+s6-ready-when /usr/local/bin/tailscale status
+
+# Start tailscaled
+exec /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket=/run/tailscale/tailscaled.sock --tun=userspace-networking
