@@ -9,7 +9,7 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="tailscale"
-LABEL org.opencontainers.image.title="tailscale" \
+LABEL org.opencontainers.image.title="Tailscale" \
     org.opencontainers.image.description="Tailscale mesh VPN on FreeBSD" \
     org.opencontainers.image.source="https://github.com/daemonless/tailscale" \
     org.opencontainers.image.url="https://tailscale.com/" \
