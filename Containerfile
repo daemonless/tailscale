@@ -9,6 +9,9 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="tailscale"
+ARG UPSTREAM_URL="https://api.github.com/repos/tailscale/tailscale/releases/latest"
+ARG UPSTREAM_JQ=".tag_name"
+
 LABEL org.opencontainers.image.title="Tailscale" \
     org.opencontainers.image.description="Tailscale mesh VPN on FreeBSD" \
     org.opencontainers.image.source="https://github.com/daemonless/tailscale" \
@@ -21,6 +24,8 @@ LABEL org.opencontainers.image.title="Tailscale" \
     io.daemonless.network="host" \
     io.daemonless.pkg-source="containerfile" \
     io.daemonless.category="Infrastructure" \
+    io.daemonless.upstream-url="${UPSTREAM_URL}" \
+    io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
     io.daemonless.packages="${PACKAGES}"
 
 # Install Tailscale from FreeBSD packages
