@@ -26,6 +26,7 @@ LABEL org.opencontainers.image.title="Tailscale" \
     io.daemonless.category="Infrastructure" \
     io.daemonless.upstream-url="${UPSTREAM_URL}" \
     io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
+    io.daemonless.healthcheck-url="tailscale-status" \
     io.daemonless.packages="${PACKAGES}"
 
 # Install Tailscale from FreeBSD packages
@@ -43,7 +44,7 @@ RUN mkdir -p /var/db/tailscale && \
 COPY root/ /
 
 # Make scripts executable
-RUN chmod +x /etc/services.d/tailscaled/run /etc/cont-init.d/* 2>/dev/null || true
+RUN chmod +x /etc/services.d/tailscaled/run /etc/cont-init.d/* /healthz 2>/dev/null || true
 
 # Set up s6 service link
 

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Tailscale health check - no HTTP endpoint, use tailscale CLI
+
+# Check if tailscaled is running and connected
+if ! /usr/local/bin/tailscale status --json 2>/dev/null | grep -q '"BackendState":"Running"'; then
+    echo "Tailscale not running" >&2
+    exit 1
+fi
+
+exit 0
