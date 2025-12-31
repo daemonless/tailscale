@@ -21,7 +21,6 @@ LABEL org.opencontainers.image.title="Tailscale" \
     io.daemonless.network="host" \
     io.daemonless.pkg-source="containerfile" \
     io.daemonless.category="Infrastructure" \
-    io.daemonless.upstream-mode="pkg" \
     io.daemonless.packages="${PACKAGES}"
 
 # Install Tailscale from FreeBSD packages
