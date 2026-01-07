@@ -8,4 +8,4 @@ sleep 2
 s6-ready-when /usr/local/bin/tailscale status
 
 # Start tailscaled
-exec /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock --tun=userspace-networking
+exec /usr/local/bin/tailscaled --state=/var/db/tailscale/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock --tun=userspace-networking
