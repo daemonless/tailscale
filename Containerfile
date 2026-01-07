@@ -36,8 +36,8 @@ RUN pkg update && \
     pkg clean -ay && \
     rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
 
-# Create state directory
-RUN mkdir -p /var/db/tailscale && \
+# Create state and runtime directories
+RUN mkdir -p /var/db/tailscale /var/run/tailscale && \
     chmod 700 /var/db/tailscale
 
 # Copy service definition and init scripts
