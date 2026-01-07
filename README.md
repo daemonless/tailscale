@@ -66,7 +66,7 @@ podman exec tailscale tailscale up --advertise-routes=192.168.1.0/24
 - **Base:** Built on `ghcr.io/daemonless/base-image` (FreeBSD)
 
 ### Specific Requirements
-- **VNET Required:** Must use `--annotation 'org.freebsd.jail.vnet=new'`
+- **Host Network Required:** Must use `--network host`
 
 ## Links
 
