@@ -21,8 +21,7 @@ This image uses `s6-log` for internal log rotation.
 
 ```bash
 podman run -d --name tailscale \
-  --network none \
-  --annotation 'org.freebsd.jail.vnet=new' \
+  --network host \
   -v /containers/tailscale:/var/db/tailscale \
   --restart unless-stopped \
   ghcr.io/daemonless/tailscale:latest
