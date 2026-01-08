@@ -58,7 +58,15 @@ Runs in userspace networking mode.
 ### Subnet Router
 To expose local network:
 ```bash
-podman exec tailscale tailscale up --advertise-routes=192.168.1.0/24
+## Usage
+
+### Advertize Subnet Routes
+
+```bash
+podman exec tailscale tailscale up --advertise-routes=<your-subnet>/24
+```
+
+### Authentication with Auth Key
 ```
 
 ## Notes
