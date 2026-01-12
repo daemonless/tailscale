@@ -1,0 +1,37 @@
+name: tailscale
+
+x-daemonless:
+  title: "Tailscale"
+  icon: ":simple-tailscale:"
+  category: "Infrastructure"
+  description: "Tailscale mesh VPN on FreeBSD."
+  upstream_url: "https://github.com/tailscale/tailscale"
+  web_url: "https://tailscale.com/"
+  freshports_url: "https://www.freshports.org/security/tailscale/"
+  user: "root"
+  mlock: false
+  upstream_binary: false
+  
+  docs:
+    env:
+      TS_AUTHKEY: "Optional: Tailscale Auth Key for automatic login"
+      TS_EXTRA_ARGS: "Optional: Additional arguments for tailscale up"
+    volumes:
+      /config: "State directory (tailscaled.state)"
+
+services:
+  tailscale:
+    image: ghcr.io/daemonless/tailscale:latest
+    container_name: tailscale
+    restart: unless-stopped
+    
+    # Needs devices for tun
+    devices:
+      - /dev/tun:/dev/tun
+
+    environment:
+      - TS_AUTHKEY=tskey-auth-xxxx
+      - TS_EXTRA_ARGS=--advertise-exit-node
+
+    volumes:
+      - /path/to/containers/tailscale:/config

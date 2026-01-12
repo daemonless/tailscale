@@ -1,82 +1,78 @@
-# tailscale
+# Tailscale
 
-Mesh VPN container.
+Tailscale mesh VPN on FreeBSD.
 
-## Environment Variables
+| | |
+|---|---|
+| **Registry** | `ghcr.io/daemonless/tailscale` |
+| **Source** | [https://github.com/tailscale/tailscale](https://github.com/tailscale/tailscale) |
+| **Website** | [https://tailscale.com/](https://tailscale.com/) |
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `S6_LOG_ENABLE` | Enable/Disable file logging | `1` |
-| `S6_LOG_MAX_SIZE` | Max size per log file (bytes) | `1048576` |
-| `S6_LOG_MAX_FILES` | Number of rotated log files to keep | `10` |
+## Deployment
 
-## Logging
+### Podman Compose
 
-This image uses `s6-log` for internal log rotation.
-- **System Logs**: Captured from console and stored at `/config/logs/daemonless/tailscale/`.
-- **Application Logs**: Managed by the app and typically found in `/config/logs/`.
-- **Podman Logs**: Output is mirrored to the console, so `podman logs` still works.
+```yaml
+services:
+  tailscale:
+    image: ghcr.io/daemonless/tailscale:latest
+    container_name: tailscale
+    environment:
+      - TS_AUTHKEY=tskey-auth-xxxx
+      - TS_EXTRA_ARGS=--advertise-exit-node
+    volumes:
+      - /path/to/containers/tailscale:/config
+    ports:
+    restart: unless-stopped
+```
 
-## Quick Start
+### Podman CLI
 
 ```bash
 podman run -d --name tailscale \
-  --network host \
-  -v /containers/tailscale:/var/db/tailscale \
-  --restart unless-stopped \
+  -e TS_AUTHKEY=tskey-auth-xxxx \
+  -e TS_EXTRA_ARGS=--advertise-exit-node \
+  -v /path/to/containers/tailscale:/config \ 
   ghcr.io/daemonless/tailscale:latest
+```
+
+### Ansible
+
+```yaml
+- name: Deploy tailscale
+  containers.podman.podman_container:
+    name: tailscale
+    image: ghcr.io/daemonless/tailscale:latest
+    state: started
+    restart_policy: always
+    env:
+      TS_AUTHKEY: "tskey-auth-xxxx"
+      TS_EXTRA_ARGS: "--advertise-exit-node"
+    volumes:
+      - "/path/to/containers/tailscale:/config"
 ```
 
 ## Configuration
 
-**First Run:**
-Authenticate the node:
-```bash
-podman exec tailscale tailscale up
-```
-Visit the printed URL to authorize.
+### Environment Variables
 
-## Tags
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `TS_AUTHKEY` | `tskey-auth-xxxx` | Optional: Tailscale Auth Key for automatic login |
+| `TS_EXTRA_ARGS` | `--advertise-exit-node` | Optional: Additional arguments for tailscale up |
 
-| Tag | Source | Description |
-|-----|--------|-------------|
-| `:latest` | `security/tailscale` | FreeBSD packages |
-
-## Volumes
+### Volumes
 
 | Path | Description |
 |------|-------------|
-| `/var/db/tailscale` | State directory (identity, auth) |
+| `/config` | State directory (tailscaled.state) |
 
-## Networking
+### Ports
 
-### Userspace Networking
-Runs in userspace networking mode.
-- **SOCKS5 Proxy:** `localhost:1055`
-- **HTTP Proxy:** `localhost:1055`
-
-### Subnet Router
-To expose local network:
-```bash
-## Usage
-
-### Advertize Subnet Routes
-
-```bash
-podman exec tailscale tailscale up --advertise-routes=<your-subnet>/24
-```
-
-### Authentication with Auth Key
-```
+| Port | Protocol | Description |
+|------|----------|-------------|
 
 ## Notes
 
-- **Base:** Built on `ghcr.io/daemonless/base-image` (FreeBSD)
-
-### Specific Requirements
-- **Host Network Required:** Must use `--network host`
-
-## Links
-
-- [Website](https://tailscale.com/)
-- [FreshPorts](https://www.freshports.org/security/tailscale/)
+- **User:** `root` (UID/GID set via PUID/PGID)
+- **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)
