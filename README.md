@@ -22,7 +22,6 @@ services:
       - TS_EXTRA_ARGS=--advertise-exit-node
     volumes:
       - /path/to/containers/tailscale:/config
-    ports:
     restart: unless-stopped
 ```
 
@@ -53,24 +52,17 @@ podman run -d --name tailscale \
 ```
 
 ## Configuration
-
 ### Environment Variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `TS_AUTHKEY` | `tskey-auth-xxxx` | Optional: Tailscale Auth Key for automatic login |
 | `TS_EXTRA_ARGS` | `--advertise-exit-node` | Optional: Additional arguments for tailscale up |
-
 ### Volumes
 
 | Path | Description |
 |------|-------------|
 | `/config` | State directory (tailscaled.state) |
-
-### Ports
-
-| Port | Protocol | Description |
-|------|----------|-------------|
 
 ## Notes
 
