@@ -10,6 +10,7 @@ Tailscale mesh VPN on FreeBSD.
 | | |
 |---|---|
 | **Registry** | `ghcr.io/daemonless/tailscale` |
+| **Docs** | [daemonless.io/images/tailscale](https://daemonless.io/images/tailscale/) |
 | **Source** | [https://github.com/tailscale/tailscale](https://github.com/tailscale/tailscale) |
 | **Website** | [https://tailscale.com/](https://tailscale.com/) |
 
