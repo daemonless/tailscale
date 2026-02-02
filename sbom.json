@@ -1,11 +1,11 @@
 {
   "image": "tailscale",
-  "generated": "2026-02-01T22:51:52Z",
+  "generated": "2026-02-02T13:55:19Z",
   "tags": {
     "pkg-latest": {
       "app_version": "1.94.1",
       "source": "freebsd-latest",
-      "generated": "2026-02-01T22:51:41Z",
+      "generated": "2026-02-02T13:51:13Z",
       "packages": {
         "freebsd": [
           {
@@ -178,7 +178,7 @@
     "pkg": {
       "app_version": "1.92.5_1",
       "source": "freebsd-quarterly",
-      "generated": "2026-02-01T22:51:21Z",
+      "generated": "2026-02-02T13:55:07Z",
       "packages": {
         "freebsd": [
           {
