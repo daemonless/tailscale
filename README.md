@@ -72,5 +72,6 @@ podman run -d --name tailscale \
 
 ## Notes
 
+- **Architectures:** amd64
 - **User:** `root` (UID/GID set via PUID/PGID)
 - **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)
