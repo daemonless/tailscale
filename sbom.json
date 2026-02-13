@@ -1,12 +1,459 @@
 {
   "image": "tailscale",
-  "generated": "2026-02-13T12:15:29Z",
+  "generated": "2026-02-13T22:08:53Z",
   "tags": {
+    "pkg-latest": {
+      "arch": "amd64",
+      "app_version": "1.94.1_1",
+      "source": "pkg",
+      "generated": "2026-02-13T22:08:42Z",
+      "packages": {
+        "freebsd": [
+          {
+            "name": "FreeBSD-audit-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-blocklist",
+            "version": "15.0p3"
+          },
+          {
+            "name": "FreeBSD-bzip2-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-certctl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-clibs",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ctf-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-fetch",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-kerberos-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libarchive",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libbsdstat",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libcasper",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libexecinfo",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libldns",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libmagic",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libucl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-mtree",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ncurses-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-openssl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-openssl-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-pkg-bootstrap",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-rc",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-runtime",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-tcpd",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ufs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-utilities",
+            "version": "15.0p1"
+          },
+          {
+            "name": "FreeBSD-xz-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zfs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zlib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zoneinfo",
+            "version": "15.0"
+          },
+          {
+            "name": "ca_root_nss",
+            "version": "3.117_2"
+          },
+          {
+            "name": "execline",
+            "version": "2.9.7.0"
+          },
+          {
+            "name": "jq",
+            "version": "1.8.1"
+          },
+          {
+            "name": "oniguruma",
+            "version": "6.9.10"
+          },
+          {
+            "name": "pkg",
+            "version": "2.5.1"
+          },
+          {
+            "name": "s6",
+            "version": "2.13.2.0"
+          },
+          {
+            "name": "s6-rc",
+            "version": "0.5.6.0"
+          },
+          {
+            "name": "skalibs",
+            "version": "2.14.4.0"
+          },
+          {
+            "name": "tailscale",
+            "version": "1.94.1_1"
+          }
+        ],
+        "dotnet": [],
+        "go": [
+          {
+            "name": "tailscale.com",
+            "version": ""
+          },
+          {
+            "name": "stdlib",
+            "version": "v1.25.7"
+          },
+          {
+            "name": "filippo.io/edwards25519",
+            "version": "v1.1.0"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2",
+            "version": "v1.41.0"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/config",
+            "version": "v1.29.5"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/credentials",
+            "version": "v1.17.58"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
+            "version": "v1.16.27"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/internal/configsources",
+            "version": "v1.4.16"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/internal/endpoints/v2",
+            "version": "v2.7.16"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/internal/ini",
+            "version": "v1.8.2"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding",
+            "version": "v1.13.4"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/service/internal/presigned-url",
+            "version": "v1.13.16"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/service/sso",
+            "version": "v1.24.14"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/service/ssooidc",
+            "version": "v1.28.13"
+          },
+          {
+            "name": "github.com/aws/aws-sdk-go-v2/service/sts",
+            "version": "v1.41.5"
+          },
+          {
+            "name": "github.com/aws/smithy-go",
+            "version": "v1.24.0"
+          },
+          {
+            "name": "github.com/coder/websocket",
+            "version": "v1.8.12"
+          },
+          {
+            "name": "github.com/fxamacker/cbor/v2",
+            "version": "v2.9.0"
+          },
+          {
+            "name": "github.com/gaissmai/bart",
+            "version": "v0.18.0"
+          },
+          {
+            "name": "github.com/go-json-experiment/json",
+            "version": "v0.0.0-20250813024750-ebf49471dced"
+          },
+          {
+            "name": "github.com/golang/groupcache",
+            "version": "v0.0.0-20241129210726-2c02b8208cf8"
+          },
+          {
+            "name": "github.com/hdevalence/ed25519consensus",
+            "version": "v0.2.0"
+          },
+          {
+            "name": "github.com/huin/goupnp",
+            "version": "v1.3.0"
+          },
+          {
+            "name": "github.com/kballard/go-shellquote",
+            "version": "v0.0.0-20180428030007-95032a82bc51"
+          },
+          {
+            "name": "github.com/mattn/go-colorable",
+            "version": "v0.1.13"
+          },
+          {
+            "name": "github.com/mattn/go-isatty",
+            "version": "v0.0.20"
+          },
+          {
+            "name": "github.com/mitchellh/go-ps",
+            "version": "v1.0.0"
+          },
+          {
+            "name": "github.com/peterbourgon/ff/v3",
+            "version": "v3.4.0"
+          },
+          {
+            "name": "github.com/skip2/go-qrcode",
+            "version": "v0.0.0-20200617195104-da1b6568686e"
+          },
+          {
+            "name": "github.com/tailscale/hujson",
+            "version": "v0.0.0-20221223112325-20486734a56a"
+          },
+          {
+            "name": "github.com/tailscale/web-client-prebuilt",
+            "version": "v0.0.0-20250124233751-d4cd19a26976"
+          },
+          {
+            "name": "github.com/toqueteos/webbrowser",
+            "version": "v1.2.0"
+          },
+          {
+            "name": "github.com/x448/float16",
+            "version": "v0.8.4"
+          },
+          {
+            "name": "go.yaml.in/yaml/v2",
+            "version": "v2.4.2"
+          },
+          {
+            "name": "go4.org/mem",
+            "version": "v0.0.0-20240501181205-ae6ca9944745"
+          },
+          {
+            "name": "go4.org/netipx",
+            "version": "v0.0.0-20231129151722-fdeea329fbba"
+          },
+          {
+            "name": "golang.org/x/crypto",
+            "version": "v0.46.0"
+          },
+          {
+            "name": "golang.org/x/exp",
+            "version": "v0.0.0-20250620022241-b7579e27df2b"
+          },
+          {
+            "name": "golang.org/x/net",
+            "version": "v0.48.0"
+          },
+          {
+            "name": "golang.org/x/oauth2",
+            "version": "v0.32.0"
+          },
+          {
+            "name": "golang.org/x/sync",
+            "version": "v0.19.0"
+          },
+          {
+            "name": "golang.org/x/sys",
+            "version": "v0.40.0"
+          },
+          {
+            "name": "golang.org/x/text",
+            "version": "v0.32.0"
+          },
+          {
+            "name": "golang.org/x/time",
+            "version": "v0.12.0"
+          },
+          {
+            "name": "k8s.io/client-go",
+            "version": "v0.34.0"
+          },
+          {
+            "name": "sigs.k8s.io/yaml",
+            "version": "v1.6.0"
+          },
+          {
+            "name": "software.sslmate.com/src/go-pkcs12",
+            "version": "v0.4.0"
+          },
+          {
+            "name": "github.com/anmitsu/go-shlex",
+            "version": "v0.0.0-20200514113438-38f4b401e2be"
+          },
+          {
+            "name": "github.com/creachadair/msync",
+            "version": "v0.7.1"
+          },
+          {
+            "name": "github.com/creack/pty",
+            "version": "v1.1.23"
+          },
+          {
+            "name": "github.com/digitalocean/go-smbios",
+            "version": "v0.0.0-20180907143718-390a4f403a8e"
+          },
+          {
+            "name": "github.com/djherbis/times",
+            "version": "v1.6.0"
+          },
+          {
+            "name": "github.com/google/btree",
+            "version": "v1.1.3"
+          },
+          {
+            "name": "github.com/google/go-tpm",
+            "version": "v0.9.4"
+          },
+          {
+            "name": "github.com/jellydator/ttlcache/v3",
+            "version": "v3.1.0"
+          },
+          {
+            "name": "github.com/klauspost/compress",
+            "version": "v1.18.2"
+          },
+          {
+            "name": "github.com/kortschak/wol",
+            "version": "v0.0.0-20200729010619-da482cc4850a"
+          },
+          {
+            "name": "github.com/kr/fs",
+            "version": "v0.1.0"
+          },
+          {
+            "name": "github.com/pires/go-proxyproto",
+            "version": "v0.8.1"
+          },
+          {
+            "name": "github.com/pkg/sftp",
+            "version": "v1.13.6"
+          },
+          {
+            "name": "github.com/tailscale/peercred",
+            "version": "v0.0.0-20250107143737-35a0c7bd7edc"
+          },
+          {
+            "name": "github.com/tailscale/wireguard-go",
+            "version": "v0.0.0-20250716170648-1d0488a3d7da"
+          },
+          {
+            "name": "github.com/tailscale/xnet",
+            "version": "v0.0.0-20240729143630-8497ac4dab2e"
+          },
+          {
+            "name": "github.com/u-root/u-root",
+            "version": "v0.14.0"
+          },
+          {
+            "name": "golang.org/x/term",
+            "version": "v0.38.0"
+          },
+          {
+            "name": "gvisor.dev/gvisor",
+            "version": "v0.0.0-20250205023644-9414b50a5633"
+          }
+        ],
+        "java": [],
+        "node": [],
+        "php": [],
+        "python": [],
+        "ruby": [],
+        "rust": []
+      },
+      "summary": {
+        "freebsd": 38,
+        "dotnet": 0,
+        "go": 66,
+        "java": 0,
+        "node": 0,
+        "php": 0,
+        "python": 0,
+        "ruby": 0,
+        "rust": 0,
+        "total": 104
+      }
+    },
     "pkg": {
       "arch": "amd64",
       "app_version": "1.94.1_1",
       "source": "pkg",
-      "generated": "2026-02-13T12:13:44Z",
+      "generated": "2026-02-13T22:03:51Z",
       "packages": {
         "freebsd": [
           {
