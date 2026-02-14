@@ -1,12 +1,12 @@
 {
   "image": "tailscale",
-  "generated": "2026-02-14T10:01:20Z",
+  "generated": "2026-02-14T14:41:51Z",
   "tags": {
     "pkg-latest": {
       "arch": "amd64",
       "app_version": "1.94.1_1",
       "source": "pkg",
-      "generated": "2026-02-14T10:01:09Z",
+      "generated": "2026-02-14T14:35:44Z",
       "packages": {
         "freebsd": [
           {
@@ -453,7 +453,7 @@
       "arch": "amd64",
       "app_version": "1.94.1_1",
       "source": "pkg",
-      "generated": "2026-02-14T10:00:38Z",
+      "generated": "2026-02-14T14:40:33Z",
       "packages": {
         "freebsd": [
           {
