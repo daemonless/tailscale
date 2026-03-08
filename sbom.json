@@ -1,12 +1,12 @@
 {
   "image": "tailscale",
-  "generated": "2026-02-25T19:20:30Z",
+  "generated": "2026-03-08T09:23:14Z",
   "tags": {
     "pkg-latest": {
       "arch": "amd64",
-      "app_version": "1.94.1_1",
+      "app_version": "1.94.1_2",
       "source": "pkg",
-      "generated": "2026-02-25T19:20:16Z",
+      "generated": "2026-03-08T09:22:01Z",
       "packages": {
         "freebsd": [
           {
@@ -143,7 +143,7 @@
           },
           {
             "name": "pkg",
-            "version": "2.5.1"
+            "version": "2.6.2"
           },
           {
             "name": "s6",
@@ -159,7 +159,7 @@
           },
           {
             "name": "tailscale",
-            "version": "1.94.1_1"
+            "version": "1.94.1_2"
           }
         ],
         "dotnet": [],
@@ -170,7 +170,7 @@
           },
           {
             "name": "stdlib",
-            "version": "v1.25.7"
+            "version": "v1.25.8"
           },
           {
             "name": "filippo.io/edwards25519",
@@ -451,9 +451,9 @@
     },
     "pkg": {
       "arch": "amd64",
-      "app_version": "1.94.1_1",
+      "app_version": "1.94.1_2",
       "source": "pkg",
-      "generated": "2026-02-25T19:20:10Z",
+      "generated": "2026-03-08T09:23:02Z",
       "packages": {
         "freebsd": [
           {
@@ -606,7 +606,7 @@
           },
           {
             "name": "tailscale",
-            "version": "1.94.1_1"
+            "version": "1.94.1_2"
           }
         ],
         "dotnet": [],
@@ -617,7 +617,7 @@
           },
           {
             "name": "stdlib",
-            "version": "v1.25.7"
+            "version": "v1.25.8"
           },
           {
             "name": "filippo.io/edwards25519",
