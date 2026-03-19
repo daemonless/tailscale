@@ -1,12 +1,12 @@
 {
   "image": "tailscale",
-  "generated": "2026-03-08T09:23:14Z",
+  "generated": "2026-03-19T09:02:29Z",
   "tags": {
     "pkg-latest": {
       "arch": "amd64",
       "app_version": "1.94.1_2",
       "source": "pkg",
-      "generated": "2026-03-08T09:22:01Z",
+      "generated": "2026-03-19T09:01:35Z",
       "packages": {
         "freebsd": [
           {
@@ -131,7 +131,7 @@
           },
           {
             "name": "execline",
-            "version": "2.9.7.0"
+            "version": "2.9.8.1"
           },
           {
             "name": "jq",
@@ -143,19 +143,19 @@
           },
           {
             "name": "pkg",
-            "version": "2.6.2"
+            "version": "2.6.2_1"
           },
           {
             "name": "s6",
-            "version": "2.13.2.0"
+            "version": "2.14.0.1"
           },
           {
             "name": "s6-rc",
-            "version": "0.5.6.0"
+            "version": "0.6.0.0"
           },
           {
             "name": "skalibs",
-            "version": "2.14.4.0"
+            "version": "2.14.5.1"
           },
           {
             "name": "tailscale",
@@ -453,7 +453,7 @@
       "arch": "amd64",
       "app_version": "1.94.1_2",
       "source": "pkg",
-      "generated": "2026-03-08T09:23:02Z",
+      "generated": "2026-03-19T09:02:17Z",
       "packages": {
         "freebsd": [
           {
