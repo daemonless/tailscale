@@ -5,14 +5,27 @@ Source: dbuild templates
 
 # Tailscale
 
-Tailscale mesh VPN on FreeBSD.
+[![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/tailscale/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/tailscale/actions)
+[![Last Commit](https://img.shields.io/github/last-commit/daemonless/tailscale?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/tailscale/commits)
+
+Zero-config mesh VPN built on WireGuard — securely connect your devices without port forwarding or firewall changes.
 
 | | |
 |---|---|
 | **Registry** | `ghcr.io/daemonless/tailscale` |
-| **Docs** | [daemonless.io/images/tailscale](https://daemonless.io/images/tailscale/) |
 | **Source** | [https://github.com/tailscale/tailscale](https://github.com/tailscale/tailscale) |
 | **Website** | [https://tailscale.com/](https://tailscale.com/) |
+
+## Version Tags
+
+| Tag | Description | Best For |
+| :--- | :--- | :--- |
+| `latest` / `pkg` | **FreeBSD Quarterly**. Uses stable, tested packages. | Most users. Matches Linux Docker behavior. |
+| `pkg-latest` | **FreeBSD Latest**. Rolling package updates. | Newest FreeBSD packages. |
+
+## Prerequisites
+
+Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
 
@@ -27,8 +40,50 @@ services:
       - TS_AUTHKEY=tskey-auth-xxxx
       - TS_EXTRA_ARGS=--advertise-exit-node
     volumes:
-      - /path/to/containers/tailscale:/config
+      - "/path/to/containers/tailscale:/config"
     restart: unless-stopped
+```
+
+### AppJail Director
+
+**.env**:
+
+```
+DIRECTOR_PROJECT=tailscale
+TS_AUTHKEY=tskey-auth-xxxx
+TS_EXTRA_ARGS=--advertise-exit-node
+```
+
+**appjail-director.yml**:
+
+```yaml
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  tailscale:
+    name: tailscale
+    options:
+      - container: 'boot args:--pull'
+    oci:
+      user: root
+      environment:
+        - TS_AUTHKEY: !ENV '${TS_AUTHKEY}'
+        - TS_EXTRA_ARGS: !ENV '${TS_EXTRA_ARGS}'
+    volumes:
+      - tailscale: /config
+volumes:
+  tailscale:
+    device: '/path/to/containers/tailscale'
+```
+
+**Makejail**:
+
+```
+ARG tag=latest
+
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/tailscale:${tag}
 ```
 
 ### Podman CLI
@@ -57,21 +112,25 @@ podman run -d --name tailscale \
       - "/path/to/containers/tailscale:/config"
 ```
 
-## Configuration
+## Parameters
+
 ### Environment Variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `TS_AUTHKEY` | `tskey-auth-xxxx` | Optional: Tailscale Auth Key for automatic login |
 | `TS_EXTRA_ARGS` | `--advertise-exit-node` | Optional: Additional arguments for tailscale up |
+
 ### Volumes
 
 | Path | Description |
 |------|-------------|
 | `/config` | State directory (tailscaled.state) |
 
-## Notes
+**Architectures:** amd64
+**User:** `root` (UID/GID via PUID/PGID, defaults to 1000:1000)
+**Base:** FreeBSD 15.0
 
-- **Architectures:** amd64
-- **User:** `root` (UID/GID set via PUID/PGID)
-- **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)
+---
+
+Need help? Join our [Discord](https://discord.gg/Kb9tkhecZT) community.

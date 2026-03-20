@@ -14,7 +14,7 @@ ARG UPSTREAM_JQ=".tag_name"
 
 # --- Metadata (Injected by Generator) ---
 LABEL org.opencontainers.image.title="Tailscale" \
-      org.opencontainers.image.description="Tailscale mesh VPN on FreeBSD." \
+      org.opencontainers.image.description="Zero-config mesh VPN built on WireGuard — securely connect your devices without port forwarding or firewall changes." \
       org.opencontainers.image.source="https://github.com/daemonless/tailscale" \
       org.opencontainers.image.url="https://tailscale.com/" \
       org.opencontainers.image.documentation="https://tailscale.com/kb/" \
