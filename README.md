@@ -10,6 +10,7 @@ Source: dbuild templates
 
 Zero-config mesh VPN built on WireGuard — securely connect your devices without port forwarding or firewall changes.
 
+
 | | |
 |---|---|
 | **Registry** | `ghcr.io/daemonless/tailscale` |
