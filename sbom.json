@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-05T19:38:57Z",
+  "generated": "2026-04-07T14:57:28Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
-      "app_version": "1.94.1_2",
+      "app_version": "1.96.4",
       "arch": "amd64",
-      "generated": "2026-04-05T19:37:43Z",
+      "generated": "2026-04-07T14:53:19Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -143,7 +143,7 @@
           },
           {
             "name": "pkg",
-            "version": "2.5.1"
+            "version": "2.6.2_1"
           },
           {
             "name": "s6",
@@ -155,13 +155,13 @@
           },
           {
             "name": "tailscale",
-            "version": "1.94.1_2"
+            "version": "1.96.4"
           }
         ],
         "go": [
           {
             "name": "filippo.io/edwards25519",
-            "version": "v1.1.0"
+            "version": "v1.2.0"
           },
           {
             "name": "github.com/anmitsu/go-shlex",
@@ -229,7 +229,7 @@
           },
           {
             "name": "github.com/creack/pty",
-            "version": "v1.1.23"
+            "version": "v1.1.24"
           },
           {
             "name": "github.com/digitalocean/go-smbios",
@@ -245,7 +245,7 @@
           },
           {
             "name": "github.com/gaissmai/bart",
-            "version": "v0.18.0"
+            "version": "v0.26.1"
           },
           {
             "name": "github.com/go-json-experiment/json",
@@ -377,7 +377,7 @@
           },
           {
             "name": "golang.org/x/oauth2",
-            "version": "v0.32.0"
+            "version": "v0.33.0"
           },
           {
             "name": "golang.org/x/sync",
@@ -401,7 +401,7 @@
           },
           {
             "name": "gvisor.dev/gvisor",
-            "version": "v0.0.0-20250205023644-9414b50a5633"
+            "version": "v0.0.0-20260224225140-573d5e7127a8"
           },
           {
             "name": "k8s.io/client-go",
@@ -417,7 +417,7 @@
           },
           {
             "name": "stdlib",
-            "version": "v1.25.8"
+            "version": "v1.26.1"
           },
           {
             "name": "tailscale.com",
@@ -448,7 +448,7 @@
     "pkg-latest": {
       "app_version": "1.96.4",
       "arch": "amd64",
-      "generated": "2026-04-05T19:36:41Z",
+      "generated": "2026-04-07T14:53:13Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
