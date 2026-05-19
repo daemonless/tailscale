@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-15T07:30:16Z",
+  "generated": "2026-05-19T10:51:39Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
-      "app_version": "1.96.4_2",
+      "app_version": "1.98.2",
       "arch": "amd64",
-      "generated": "2026-05-15T07:27:56Z",
+      "generated": "2026-05-19T10:47:51Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -127,7 +127,7 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.117_2"
+            "version": "3.123.1"
           },
           {
             "name": "execline",
@@ -155,7 +155,7 @@
           },
           {
             "name": "tailscale",
-            "version": "1.96.4_2"
+            "version": "1.98.2"
           }
         ],
         "go": [
@@ -281,7 +281,7 @@
           },
           {
             "name": "github.com/klauspost/compress",
-            "version": "v1.18.2"
+            "version": "v1.18.5"
           },
           {
             "name": "github.com/kortschak/wol",
@@ -320,8 +320,12 @@
             "version": "v0.0.0-20200617195104-da1b6568686e"
           },
           {
+            "name": "github.com/tailscale/gliderssh",
+            "version": "v0.3.4-0.20260330083525-c1389c70ff89"
+          },
+          {
             "name": "github.com/tailscale/hujson",
-            "version": "v0.0.0-20221223112325-20486734a56a"
+            "version": "v0.0.0-20260302212456-ecc657c15afd"
           },
           {
             "name": "github.com/tailscale/peercred",
@@ -333,7 +337,7 @@
           },
           {
             "name": "github.com/tailscale/wireguard-go",
-            "version": "v0.0.0-20250716170648-1d0488a3d7da"
+            "version": "v0.0.0-20260427181203-e3ac4a0afb4e"
           },
           {
             "name": "github.com/tailscale/xnet",
@@ -365,7 +369,7 @@
           },
           {
             "name": "golang.org/x/crypto",
-            "version": "v0.46.0"
+            "version": "v0.50.0"
           },
           {
             "name": "golang.org/x/exp",
@@ -373,27 +377,27 @@
           },
           {
             "name": "golang.org/x/net",
-            "version": "v0.48.0"
+            "version": "v0.53.0"
           },
           {
             "name": "golang.org/x/oauth2",
-            "version": "v0.33.0"
+            "version": "v0.36.0"
           },
           {
             "name": "golang.org/x/sync",
-            "version": "v0.19.0"
+            "version": "v0.20.0"
           },
           {
             "name": "golang.org/x/sys",
-            "version": "v0.40.0"
+            "version": "v0.43.0"
           },
           {
             "name": "golang.org/x/term",
-            "version": "v0.38.0"
+            "version": "v0.42.0"
           },
           {
             "name": "golang.org/x/text",
-            "version": "v0.32.0"
+            "version": "v0.36.0"
           },
           {
             "name": "golang.org/x/time",
@@ -435,20 +439,20 @@
       "summary": {
         "dotnet": 0,
         "freebsd": 37,
-        "go": 66,
+        "go": 67,
         "java": 0,
         "node": 0,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 103
+        "total": 104
       }
     },
     "pkg-latest": {
       "app_version": "1.96.4_2",
       "arch": "amd64",
-      "generated": "2026-05-15T07:29:04Z",
+      "generated": "2026-05-19T10:50:28Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -570,7 +574,7 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.117_2"
+            "version": "3.123.1"
           },
           {
             "name": "execline",
