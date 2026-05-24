@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-19T19:13:17Z",
+  "generated": "2026-05-24T20:28:23Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
       "app_version": "1.98.2",
       "arch": "amd64",
-      "generated": "2026-05-19T19:12:04Z",
+      "generated": "2026-05-24T20:27:13Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -450,9 +450,9 @@
       }
     },
     "pkg-latest": {
-      "app_version": "1.98.2",
+      "app_version": "1.98.3",
       "arch": "amd64",
-      "generated": "2026-05-19T19:11:37Z",
+      "generated": "2026-05-24T20:26:34Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -602,7 +602,7 @@
           },
           {
             "name": "tailscale",
-            "version": "1.98.2"
+            "version": "1.98.3"
           }
         ],
         "go": [
