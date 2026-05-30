@@ -7,5 +7,5 @@ sleep 2
 # Signal readiness when tailscaled is responsive
 s6-ready-when /usr/local/bin/tailscale status
 
-# Start tailscaled
-exec /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock --tun=userspace-networking
+# Start tailscaled as bsd so /config state files are owned by PUID
+exec /usr/local/bin/s6-setuidgid bsd /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock --tun=userspace-networking
