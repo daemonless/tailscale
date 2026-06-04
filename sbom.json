@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-31T07:21:18Z",
+  "generated": "2026-06-04T16:34:38Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
-      "app_version": "1.98.4",
+      "app_version": "1.98.5_1",
       "arch": "amd64",
-      "generated": "2026-05-31T07:20:05Z",
+      "generated": "2026-06-04T16:33:27Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -155,7 +155,7 @@
           },
           {
             "name": "tailscale",
-            "version": "1.98.4"
+            "version": "1.98.5_1"
           }
         ],
         "go": [
@@ -421,7 +421,7 @@
           },
           {
             "name": "stdlib",
-            "version": "v1.26.3"
+            "version": "v1.26.4"
           },
           {
             "name": "tailscale.com",
@@ -450,9 +450,9 @@
       }
     },
     "pkg-latest": {
-      "app_version": "1.98.4",
+      "app_version": "1.98.5_1",
       "arch": "amd64",
-      "generated": "2026-05-31T07:20:06Z",
+      "generated": "2026-06-04T16:33:03Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -602,7 +602,7 @@
           },
           {
             "name": "tailscale",
-            "version": "1.98.4"
+            "version": "1.98.5_1"
           }
         ],
         "go": [
@@ -868,7 +868,7 @@
           },
           {
             "name": "stdlib",
-            "version": "v1.26.3"
+            "version": "v1.26.4"
           },
           {
             "name": "tailscale.com",
