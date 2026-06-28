@@ -10,7 +10,6 @@ Source: dbuild templates
 
 Zero-config mesh VPN built on WireGuard — securely connect your devices without port forwarding or firewall changes.
 
-
 | | |
 |---|---|
 | **Registry** | `ghcr.io/daemonless/tailscale` |
@@ -18,14 +17,12 @@ Zero-config mesh VPN built on WireGuard — securely connect your devices withou
 | **Website** | [https://tailscale.com/](https://tailscale.com/) |
 
 ## Version Tags
-
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
 | `latest` / `pkg` | **FreeBSD Quarterly**. Uses stable, tested packages. | Most users. Matches Linux Docker behavior. |
 | `pkg-latest` | **FreeBSD Latest**. Rolling package updates. | Newest FreeBSD packages. |
 
 ## Prerequisites
-
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
@@ -35,21 +32,22 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   tailscale:
-    image: ghcr.io/daemonless/tailscale:latest
+    image: "ghcr.io/daemonless/tailscale:latest"
     container_name: tailscale
     environment:
-      - TS_AUTHKEY=tskey-auth-xxxx
-      - TS_EXTRA_ARGS=--advertise-exit-node
+      - TS_AUTHKEY=tskey-auth-xxxx  # Optional: Tailscale Auth Key for automatic login
+      - TS_EXTRA_ARGS=--advertise-exit-node  # Optional: Additional arguments for tailscale up
     volumes:
       - "/path/to/containers/tailscale:/config"
     restart: unless-stopped
 ```
 
 ### AppJail Director
-
 **.env**:
 
 ```
+# .env
+
 DIRECTOR_PROJECT=tailscale
 TS_AUTHKEY=tskey-auth-xxxx
 TS_EXTRA_ARGS=--advertise-exit-node
@@ -58,6 +56,8 @@ TS_EXTRA_ARGS=--advertise-exit-node
 **appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
 options:
   - virtualnet: ':<random> default'
   - nat:
@@ -81,6 +81,8 @@ volumes:
 **Makejail**:
 
 ```
+# Makejail
+
 ARG tag=latest
 
 OPTION overwrite=force
@@ -97,13 +99,27 @@ podman run -d --name tailscale \
   ghcr.io/daemonless/tailscale:latest
 ```
 
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -e TS_AUTHKEY=tskey-auth-xxxx \
+  -e TS_EXTRA_ARGS=--advertise-exit-node \
+  -o fstab="/path/to/containers/tailscale /config <pseudofs>" \
+  ghcr.io/daemonless/tailscale:latest tailscale
+```
+
 ### Ansible
 
 ```yaml
 - name: Deploy tailscale
   containers.podman.podman_container:
     name: tailscale
-    image: ghcr.io/daemonless/tailscale:latest
+    image: "ghcr.io/daemonless/tailscale:latest"
     state: started
     restart_policy: always
     env:
@@ -130,7 +146,7 @@ podman run -d --name tailscale \
 
 **Architectures:** amd64
 **User:** `root` (UID/GID via PUID/PGID, defaults to 1000:1000)
-**Base:** FreeBSD 15.0
+**Base:** FreeBSD 15.1
 
 ---
 
