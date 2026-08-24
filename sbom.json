@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-21T20:41:00Z",
+  "generated": "2026-08-24T14:03:42Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
-      "app_version": "1.102.2_1",
+      "app_version": "1.102.3",
       "arch": "amd64",
-      "generated": "2026-08-21T20:35:06Z",
+      "generated": "2026-08-24T13:57:48Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -287,7 +287,7 @@
               "BSD3CLAUSE"
             ],
             "name": "tailscale",
-            "version": "1.102.2_1"
+            "version": "1.102.3"
           }
         ],
         "go": [
@@ -639,7 +639,7 @@
           {
             "name": "stdlib",
             "purl": "",
-            "version": "v1.26.6"
+            "version": "v1.26.7"
           },
           {
             "name": "tailscale.com",
@@ -669,9 +669,9 @@
       }
     },
     "pkg-latest": {
-      "app_version": "1.102.2_2",
+      "app_version": "1.102.3",
       "arch": "amd64",
-      "generated": "2026-08-21T20:40:35Z",
+      "generated": "2026-08-24T13:58:28Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -953,7 +953,7 @@
               "BSD3CLAUSE"
             ],
             "name": "tailscale",
-            "version": "1.102.2_2"
+            "version": "1.102.3"
           }
         ],
         "go": [
