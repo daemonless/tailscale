@@ -39,8 +39,11 @@ services:
       - TS_EXTRA_ARGS=--advertise-exit-node  # Optional: Additional arguments for tailscale up
     volumes:
       - "/path/to/containers/tailscale:/config"
-    restart: unless-stopped
+    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
+    restart: always
 ```
+
+Save as `compose.yaml`, then run `podman-compose up -d`.
 
 ### AppJail Director
 **.env**:
@@ -89,6 +92,8 @@ OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/tailscale:${tag}
 ```
 
+Save the files above, then run `appjail-director up`.
+
 ### Podman CLI
 
 ```bash
@@ -98,6 +103,8 @@ podman run -d --name tailscale \
   -v /path/to/containers/tailscale:/config \
   ghcr.io/daemonless/tailscale:latest
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
@@ -111,6 +118,34 @@ appjail oci run -Pd \
   -e TS_EXTRA_ARGS=--advertise-exit-node \
   -o fstab="/path/to/containers/tailscale /config <pseudofs>" \
   ghcr.io/daemonless/tailscale:latest tailscale
+```
+
+Save as `run.sh`, then run `sh run.sh`.
+
+### Bastille
+
+> [!WARNING]
+> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+
+```yaml
+services:
+  tailscale:
+    image: "ghcr.io/daemonless/tailscale:latest"
+    container_name: tailscale
+    network_mode: host  # jail shares host networking
+    environment:
+      - TS_AUTHKEY=tskey-auth-xxxx
+      - TS_EXTRA_ARGS=--advertise-exit-node
+```
+
+Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+
+```bash
+bastille create -O \
+  --env TS_AUTHKEY=tskey-auth-xxxx \
+  --env TS_EXTRA_ARGS=--advertise-exit-node \
+  --data-path /path/to/containers/tailscale \
+  tailscale ghcr.io/daemonless/tailscale:latest inherit
 ```
 
 ### Ansible
@@ -128,6 +163,8 @@ appjail oci run -Pd \
     volumes:
       - "/path/to/containers/tailscale:/config"
 ```
+
+Save as `tailscale-deploy.yaml`, then run `ansible-playbook tailscale-deploy.yaml`.
 
 ## Parameters
 
