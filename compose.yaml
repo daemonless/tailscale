@@ -15,8 +15,13 @@ x-daemonless:
 
   docs:
     env:
-      TS_AUTHKEY: "Optional: Tailscale Auth Key for automatic login"
-      TS_EXTRA_ARGS: "Optional: Additional arguments for tailscale up"
+      TS_AUTHKEY:
+        desc: "Tailscale Auth Key for automatic login"
+        optional: true
+        level: primary
+      TS_EXTRA_ARGS:
+        desc: "Additional arguments for tailscale up"
+        optional: true
     volumes:
       /config: "State directory (tailscaled.state)"
 
