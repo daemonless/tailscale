@@ -7,6 +7,7 @@ Source: dbuild templates
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/tailscale/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/tailscale/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/tailscale?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/tailscale/commits)
+[![OCI Pulls](https://img.shields.io/docker/pulls/daemonless/tailscale?style=flat-square&label=OCI+Pulls&color=blue)](https://hub.docker.com/r/daemonless/tailscale)
 
 Zero-config mesh VPN built on WireGuard — securely connect your devices without port forwarding or firewall changes.
 
