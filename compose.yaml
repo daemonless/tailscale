@@ -16,7 +16,7 @@ x-daemonless:
   docs:
     env:
       TS_AUTHKEY:
-        desc: "Tailscale Auth Key for automatic login"
+        desc: "Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys"
         optional: true
         level: primary
       TS_EXTRA_ARGS:
