@@ -36,7 +36,7 @@ services:
     image: "ghcr.io/daemonless/tailscale:latest"
     container_name: tailscale
     environment:
-      - TS_AUTHKEY=tskey-auth-xxxx  # Tailscale Auth Key for automatic login
+      - TS_AUTHKEY=tskey-auth-xxxx  # Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys
       - TS_EXTRA_ARGS=--advertise-exit-node  # Additional arguments for tailscale up
     volumes:
       - "/path/to/containers/tailscale:/config"
@@ -182,7 +182,7 @@ Save as `tailscale-deploy.yaml`, then run `ansible-playbook tailscale-deploy.yam
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `TS_AUTHKEY` | `tskey-auth-xxxx` | Tailscale Auth Key for automatic login |
+| `TS_AUTHKEY` | `tskey-auth-xxxx` | Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys |
 | `TS_EXTRA_ARGS` | `--advertise-exit-node` | Additional arguments for tailscale up |
 
 ### Volumes
