@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-19T00:08:58Z",
+  "generated": "2026-09-22T23:33:27Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
       "app_version": "1.102.4",
       "arch": "amd64",
-      "generated": "2026-09-19T00:08:15Z",
+      "generated": "2026-09-22T23:31:32Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -685,7 +685,7 @@
     "pkg-latest": {
       "app_version": "1.102.4",
       "arch": "amd64",
-      "generated": "2026-09-19T00:07:21Z",
+      "generated": "2026-09-22T23:32:50Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
