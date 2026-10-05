@@ -39,7 +39,7 @@ services:
       - TS_AUTHKEY=tskey-auth-xxxx  # Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys
       - TS_EXTRA_ARGS=--advertise-exit-node  # Additional arguments for tailscale up
     volumes:
-      - "/path/to/containers/tailscale:/config"
+      - "/containers/tailscale:/config"
     # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
     restart: always
 ```
@@ -79,7 +79,7 @@ services:
       - tailscale: /config
 volumes:
   tailscale:
-    device: '/path/to/containers/tailscale'
+    device: '/containers/tailscale'
 ```
 
 **Makejail**:
@@ -95,37 +95,6 @@ OPTION from=ghcr.io/daemonless/tailscale:${tag}
 ```
 
 Save the files above, then run `appjail-director up`.
-
-
-
-### Podman CLI
-
-```bash
-podman run -d --name tailscale \
-  -e TS_AUTHKEY=tskey-auth-xxxx \
-  -e TS_EXTRA_ARGS=--advertise-exit-node \
-  -v /path/to/containers/tailscale:/config \
-  ghcr.io/daemonless/tailscale:latest
-```
-
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -e TS_AUTHKEY=tskey-auth-xxxx \
-  -e TS_EXTRA_ARGS=--advertise-exit-node \
-  -o fstab="/path/to/containers/tailscale /config <pseudofs>" \
-  ghcr.io/daemonless/tailscale:latest tailscale
-```
-
-Save the files above, then run `sh run.sh`.
 
 
 
@@ -145,36 +114,10 @@ services:
       - TS_AUTHKEY=tskey-auth-xxxx
       - TS_EXTRA_ARGS=--advertise-exit-node
     volumes:
-      - "/path/to/containers/tailscale:/config"
+      - "/containers/tailscale:/config"
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --env TS_AUTHKEY=tskey-auth-xxxx \
-  --env TS_EXTRA_ARGS=--advertise-exit-node \
-  --volume /path/to/containers/tailscale /config \
-  tailscale ghcr.io/daemonless/tailscale:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy tailscale
-  containers.podman.podman_container:
-    name: tailscale
-    image: "ghcr.io/daemonless/tailscale:latest"
-    state: started
-    restart_policy: always
-    env:
-      TS_AUTHKEY: "tskey-auth-xxxx"
-      TS_EXTRA_ARGS: "--advertise-exit-node"
-    volumes:
-      - "/path/to/containers/tailscale:/config"
-```
-
-Save as `tailscale-deploy.yaml`, then run `ansible-playbook tailscale-deploy.yaml`.
+Save as `bastille-compose.yml`, then run `bastille up`.
 
 ## Parameters
 
