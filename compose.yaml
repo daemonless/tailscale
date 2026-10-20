@@ -30,10 +30,6 @@ services:
     image: ghcr.io/daemonless/tailscale:latest
     container_name: tailscale
     restart: unless-stopped
-    
-    # Needs devices for tun
-    devices:
-      - /dev/tun:/dev/tun
 
     environment:
       - TS_AUTHKEY=tskey-auth-xxxx
