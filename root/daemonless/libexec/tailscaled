@@ -1,0 +1,8 @@
+#!/bin/sh
+# Start tailscaled; /init has already dropped to the run user.
+
+# Wait for network to be available
+sleep 2
+
+# Start tailscaled as bsd so /config state files are owned by PUID
+exec /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock --tun=userspace-networking
