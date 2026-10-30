@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T22:09:46Z",
+  "generated": "2026-10-30T15:35:48Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
       "app_version": "1.104.2",
       "arch": "amd64",
-      "generated": "2026-10-23T22:04:21Z",
+      "generated": "2026-10-30T15:34:47Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -662,9 +662,9 @@
       }
     },
     "pkg-latest": {
-      "app_version": "1.104.2",
+      "app_version": "1.104.4",
       "arch": "amd64",
-      "generated": "2026-10-23T22:04:59Z",
+      "generated": "2026-10-30T15:34:08Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -848,7 +848,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -911,7 +911,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -939,7 +939,7 @@
               "BSD3CLAUSE"
             ],
             "name": "tailscale",
-            "version": "1.104.2"
+            "version": "1.104.4"
           }
         ],
         "go": [
@@ -1166,7 +1166,7 @@
           {
             "name": "github.com/tailscale/gliderssh",
             "purl": "",
-            "version": "v0.3.4-0.20260716005906-1a0f895faf28"
+            "version": "v0.3.4-0.20261026144310-31f7cf365d3a"
           },
           {
             "name": "github.com/tailscale/hujson",
@@ -1226,7 +1226,7 @@
           {
             "name": "golang.org/x/crypto",
             "purl": "",
-            "version": "v0.57.0"
+            "version": "v0.58.0"
           },
           {
             "name": "golang.org/x/exp",
@@ -1236,7 +1236,7 @@
           {
             "name": "golang.org/x/net",
             "purl": "",
-            "version": "v0.59.0"
+            "version": "v0.60.0"
           },
           {
             "name": "golang.org/x/oauth2",
@@ -1246,22 +1246,22 @@
           {
             "name": "golang.org/x/sync",
             "purl": "",
-            "version": "v0.23.0"
+            "version": "v0.24.0"
           },
           {
             "name": "golang.org/x/sys",
             "purl": "",
-            "version": "v0.48.0"
+            "version": "v0.49.0"
           },
           {
             "name": "golang.org/x/term",
             "purl": "",
-            "version": "v0.46.0"
+            "version": "v0.47.0"
           },
           {
             "name": "golang.org/x/text",
             "purl": "",
-            "version": "v0.42.0"
+            "version": "v0.43.0"
           },
           {
             "name": "golang.org/x/time",
