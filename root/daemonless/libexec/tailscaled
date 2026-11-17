@@ -1,8 +1,38 @@
 #!/bin/sh
 # Start tailscaled; /init has already dropped to the run user.
 
+SOCK=/var/run/tailscale/tailscaled.sock
+
+if [ -n "${TS_AUTHKEY}" ]; then
+    (
+        state=""
+        i=0
+        while [ "$i" -lt 30 ]; do
+            state=$(/usr/local/bin/tailscale --socket="${SOCK}" status --json 2>/dev/null | jq -r '.BackendState // empty' 2>/dev/null || true)
+            case "${state}" in
+                NeedsLogin|Running|Stopped) break ;;
+            esac
+            sleep 1
+            i=$((i + 1))
+        done
+
+        if [ "${state}" = "NeedsLogin" ]; then
+            keyfile=/var/run/tailscale/authkey.$$
+            (umask 077 && printf '%s' "${TS_AUTHKEY}" > "${keyfile}")
+            echo "[tailscale] Logging in with TS_AUTHKEY..."
+            # shellcheck disable=SC2086
+            /usr/local/bin/tailscale --socket="${SOCK}" up --timeout=30s --auth-key="file:${keyfile}" ${TS_EXTRA_ARGS} || \
+                echo "[tailscale] tailscale up failed (check TS_AUTHKEY / TS_EXTRA_ARGS)" >&2
+            rm -f "${keyfile}"
+        elif [ -n "${state}" ]; then
+            echo "[tailscale] Already logged in (BackendState=${state}); skipping TS_AUTHKEY"
+        fi
+    ) &
+    unset TS_AUTHKEY
+fi
+
 # Wait for network to be available
 sleep 2
 
 # Start tailscaled as bsd so /config state files are owned by PUID
-exec /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock --tun=userspace-networking
+exec /usr/local/bin/tailscaled --state=/config/tailscaled.state --socket="${SOCK}" --tun=userspace-networking

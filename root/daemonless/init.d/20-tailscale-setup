@@ -5,11 +5,13 @@
 mkdir -p /config /var/db/tailscale /var/run/tailscale
 chmod 700 /var/db/tailscale
 
-# tailscaled runs as bsd (userspace networking) — it must own its state and socket dir
+# tailscaled runs as bsd (userspace networking) and must own its state and socket dir
 chown -R bsd:bsd /config /var/run/tailscale
 
 # Add loopback interface (required for proxy listeners)
 ifconfig lo0 127.0.0.1 up 2>/dev/null || true
 
 echo "Tailscale container initialized"
-echo "After start, run: podman exec tailscale tailscale up"
+if [ -z "${TS_AUTHKEY}" ]; then
+    echo "After start, run: podman exec tailscale tailscale up"
+fi

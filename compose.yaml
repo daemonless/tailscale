@@ -16,7 +16,9 @@ x-daemonless:
   docs:
     env:
       TS_AUTHKEY:
-        desc: "Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys"
+        desc: "Tailscale Auth Key for automatic login (create one at https://login.tailscale.com/admin/settings/keys)"
+        type: secret
+        generate: false
         optional: true
         level: primary
       TS_EXTRA_ARGS:
@@ -32,7 +34,7 @@ services:
     restart: unless-stopped
 
     environment:
-      - TS_AUTHKEY=tskey-auth-xxxx
+      - TS_AUTHKEY=
       - TS_EXTRA_ARGS=--advertise-exit-node
 
     volumes:
