@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15T09:16:30Z",
+  "generated": "2026-11-17T23:41:28Z",
   "image": "tailscale",
   "tags": {
     "pkg": {
@@ -662,9 +662,9 @@
       }
     },
     "pkg-latest": {
-      "app_version": "1.104.5_1",
+      "app_version": "1.104.7",
       "arch": "amd64",
-      "generated": "2026-11-15T09:15:57Z",
+      "generated": "2026-11-17T23:40:56Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -932,14 +932,14 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.9.0"
+            "version": "2.9.2"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "tailscale",
-            "version": "1.104.5_1"
+            "version": "1.104.7"
           }
         ],
         "go": [
@@ -1186,7 +1186,7 @@
           {
             "name": "github.com/tailscale/wireguard-go",
             "purl": "",
-            "version": "v0.0.0-20260928213032-417aef361226"
+            "version": "v0.0.0-20261106233718-9e0ab45c16ca"
           },
           {
             "name": "github.com/tailscale/xnet",
