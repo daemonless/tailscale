@@ -36,7 +36,7 @@ services:
     image: "ghcr.io/daemonless/tailscale:latest"
     container_name: tailscale
     environment:
-      - TS_AUTHKEY=tskey-auth-xxxx  # Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys
+      - TS_AUTHKEY=<TS_AUTHKEY>  # Tailscale Auth Key for automatic login (create one at https://login.tailscale.com/admin/settings/keys)
       - TS_EXTRA_ARGS=--advertise-exit-node  # Additional arguments for tailscale up
     volumes:
       - "/containers/tailscale:/config"
@@ -53,7 +53,7 @@ Save as `compose.yaml`, then run `podman-compose up -d`.
 # .env
 
 DIRECTOR_PROJECT=tailscale
-TS_AUTHKEY=tskey-auth-xxxx
+TS_AUTHKEY=<TS_AUTHKEY>
 TS_EXTRA_ARGS=--advertise-exit-node
 ```
 
@@ -111,7 +111,7 @@ services:
     network:
       - mode: host
     environment:
-      - TS_AUTHKEY=tskey-auth-xxxx
+      - TS_AUTHKEY=<TS_AUTHKEY>
       - TS_EXTRA_ARGS=--advertise-exit-node
     volumes:
       - "/containers/tailscale:/config"
@@ -125,7 +125,7 @@ Save as `bastille-compose.yml`, then run `bastille up`.
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `TS_AUTHKEY` | `tskey-auth-xxxx` | Tailscale Auth Key for automatic login — create one at https://login.tailscale.com/admin/settings/keys |
+| `TS_AUTHKEY` | `<TS_AUTHKEY>` | Tailscale Auth Key for automatic login (create one at https://login.tailscale.com/admin/settings/keys) |
 | `TS_EXTRA_ARGS` | `--advertise-exit-node` | Additional arguments for tailscale up |
 
 ### Volumes
